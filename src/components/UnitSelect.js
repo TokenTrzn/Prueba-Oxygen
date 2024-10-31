@@ -1,14 +1,31 @@
 import React from 'react';
+import styled from 'styled-components';
+
+
+const StyledSelect = styled.select`
+  background-color: #2E0039;
+  color: white;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid white;
+  appearance: none; 
+  &:focus {
+    outline: none;
+  }
+`;
 
 const UnitSelect = ({ unitType, setUnitType }) => (
-  <select value={unitType} onChange={(e) => setUnitType(e.target.value)}>
-    <option value="Kilómetros a Millas">Kilómetros a Millas</option>
-    <option value="Millas a Kilómetros">Millas a Kilómetros</option>
-    <option value="Pies a Metros">Pies a Metros</option>
-    <option value="Metros a Pies">Metros a Pies</option>
-    <option value="Centímetros a Pulgadas">Centímetros a Pulgadas</option>
-    <option value="Pulgadas a Centímetros">Pulgadas a Centímetros</option>
-  </select>
+  <StyledSelect 
+  value={unitType} 
+  onChange={(e) => setUnitType(e.target.value)}>
+    <option value="km a miles">km → miles</option>
+    <option value="miles a km">miles → km</option>
+    <option value="feet a metres">feet → metres</option>
+    <option value="metres a feet">metres → feet</option>
+    <option value="centimeter a inches">centimeter → inches</option>
+    <option value="inches a centimetres">inches → centimetres</option>
+  </StyledSelect>
 );
 
 export default UnitSelect;
